@@ -253,6 +253,21 @@ public class HomePage extends HelperFunctions {
 	@FindBy(xpath="((//div[@class='vs-search__items'])[1]//a)[1]")
 	private WebElement searchItem2;
 	
+	@FindBy(xpath="//span[@class='vs-header__favorites']")
+	private static List<WebElement> favIcon2;
+	
+	@FindBy(xpath="//div[@class='vs-search__suggestion-text-wrapper']")
+	private WebElement didYouMean;
+	
+	@FindBy(xpath="//span[@class='vs-search__suggestion-text']")
+	private WebElement didYouMeanText;
+	
+	@FindBy(xpath="//div[@class='vs-search__suggested-text-wrapper']")
+	private WebElement suggestedHeading;
+	
+	@FindBy(xpath="//span[@class='vs-search__suggested-text']")
+	private WebElement suggestedText;
+	
 	ReadXLSdata read1=new ReadXLSdata();
 	
 	public void setAccesingHomepage(ExtentTest test) throws Exception {
@@ -2329,6 +2344,235 @@ public class HomePage extends HelperFunctions {
 	    	}
 	    }
 	    HelperFunctions.staticWait(3);
+	}
+	public void setFiltersOnGlobal(ExtentTest test) throws Exception {
+		read1.setExcelFile("./testdata.xlsx", "QA");
+	  /*  Driver.getDriver().get(read1.getCellData("VALUE", 2));
+	    HelperFunctions.waitForPageToLoad(3);
+	    HelperFunctions.staticWait(3);
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    HelperFunctions.staticWait(3);
+	    viewPublished.click();
+	    HelperFunctions.staticWait(2);
+	    String mainWindowHandle = Driver.getDriver().getWindowHandle();
+	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+	    Set<String> windowHandles = Driver.getDriver().getWindowHandles();
+	    Iterator<String> iterator = windowHandles.iterator();
+	    String currentHandle = "";
+	    while (iterator.hasNext()) {
+	        currentHandle = iterator.next();
+	        if (!currentHandle.equals(mainWindowHandle)) {
+	        	Driver.getDriver().switchTo().window(currentHandle);
+	            break;
+	        }
+	    }
+	    HelperFunctions.waitForPageToLoad(3);
+	    HelperFunctions.staticWait(3);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait1.until(ExpectedConditions.visibilityOf(dealsTag));
+	    Assert.assertTrue(dealsTag.isDisplayed());
+	    HelperFunctions.staticWait(2);
+	    logo.click();*/
+	    test.info("Wait for page to load");
+	    HelperFunctions.waitForPageToLoad(15);
+	    
+	    test.info("Wait for logo visibility");
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait2.until(ExpectedConditions.visibilityOf(logo));
+	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(terriMenu.isDisplayed());
+	    test.info("Verified territory menu is displayed");
+	    HelperFunctions.staticWait(2);
+	    terriMenu.click();
+	    test.info("Clicked on territory menu");
+	    HelperFunctions.staticWait(3);
+	    WebElement globalLink = Driver.getDriver().findElement(By.linkText("Global"));
+	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait5.until(ExpectedConditions.visibilityOf(globalLink));
+	    globalLink.click();
+	    test.info("Clicked on Global");
+	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.staticWait(3);
+	    test.info("Wait for visibility of territory menu");
+	    WebDriverWait wait6 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait6.until(ExpectedConditions.visibilityOf(selectTopic));
+	    selectTopic.click();
+        HelperFunctions.staticWait(2);
+        test.info("Wait for deals checkbox visibility and clicked on it");
+        WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait3.until(ExpectedConditions.visibilityOf(dealsCheckbox));
+	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	    js2.executeScript("arguments[0].click();", dealsCheckbox);
+	   // dealsCheckbox.click();
+	    HelperFunctions.staticWait(2);
+	    test.info("Clicked on select topic");
+	    selectTopic.click();
+	    HelperFunctions.staticWait(2);
+	    Assert.assertTrue(selectedFilter.isDisplayed());
+	    test.info("Verified selected filter is displayed");
+	    HelperFunctions.staticWait(2);
+	}
+	public void setNoSearchResultGlobal(ExtentTest test) throws Exception {
+		read1.setExcelFile("./testdata.xlsx", "QA");
+	    test.info("Wait for logo visibility");
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait2.until(ExpectedConditions.visibilityOf(logo));
+	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(terriMenu.isDisplayed());
+	    test.info("Verified territory menu is displayed");
+	    HelperFunctions.staticWait(2);
+	    terriMenu.click();
+	    test.info("Clicked on territory menu");
+	    HelperFunctions.staticWait(3);
+	    WebElement globalLink = Driver.getDriver().findElement(By.linkText("Global"));
+	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait5.until(ExpectedConditions.visibilityOf(globalLink));
+	    globalLink.click();
+	    test.info("Clicked on Global");
+	    HelperFunctions.waitForPageToLoad(15);
+	    HelperFunctions.staticWait(3);
+	    test.info("Clicked on search button");
+	    searchButton.click();
+	    HelperFunctions.staticWait(2);
+	    test.info("Clicked on search field and perform enter");
+	    searchField.click();
+	    HelperFunctions.staticWait(2);
+	    Actions actions = new Actions(Driver.getDriver());
+	    actions.sendKeys(Keys.ENTER).build().perform();
+	    test.info("Wait for page to load");
+	    HelperFunctions.waitForPageToLoad(15);
+	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(trendingSearch2.isDisplayed());
+	    test.info("Verified no content page is displayed");
+	   /* test.info("Wait for no search result message is displayed");
+	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait3.until(ExpectedConditions.visibilityOf(noSearchResult));
+	    Assert.assertTrue(noSearchResult.isDisplayed());
+	    test.info("Verified no search result message is displayed");*/
+	    HelperFunctions.staticWait(2);
+	    
+	    
+	}
+	public void setNoFavGlobal(ExtentTest test) throws Exception {
+		read1.setExcelFile("./testdata.xlsx", "QA");
+	    test.info("Wait for logo visibility");
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait2.until(ExpectedConditions.visibilityOf(logo));
+	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(terriMenu.isDisplayed());
+	    test.info("Verified territory menu is displayed");
+	    HelperFunctions.staticWait(2);
+	    terriMenu.click();
+	    test.info("Clicked on territory menu");
+	    HelperFunctions.staticWait(3);
+	    WebElement globalLink = Driver.getDriver().findElement(By.linkText("Global"));
+	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait5.until(ExpectedConditions.visibilityOf(globalLink));
+	    globalLink.click();
+	    test.info("Clicked on Global");
+	    HelperFunctions.waitForPageToLoad(15);
+	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(favIcon2.size()==0);
+	    test.info("Verified no fav icon is displayed");
+	    HelperFunctions.staticWait(3);
+	    
+	}
+	public void setDidYouMean(ExtentTest test) throws Exception {
+		read1.setExcelFile("./testdata.xlsx", "QA");
+	  /*  Driver.getDriver().get(read1.getCellData("VALUE", 2));
+	    HelperFunctions.waitForPageToLoad(3);
+	    HelperFunctions.staticWait(3);
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    HelperFunctions.staticWait(3);
+	    viewPublished.click();
+	    HelperFunctions.staticWait(2);
+	    String mainWindowHandle = Driver.getDriver().getWindowHandle();
+	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+	    Set<String> windowHandles = Driver.getDriver().getWindowHandles();
+	    Iterator<String> iterator = windowHandles.iterator();
+	    String currentHandle = "";
+	    while (iterator.hasNext()) {
+	        currentHandle = iterator.next();
+	        if (!currentHandle.equals(mainWindowHandle)) {
+	        	Driver.getDriver().switchTo().window(currentHandle);
+	            break;
+	        }
+	    }
+	    test.info("Wait for page to load");
+	    HelperFunctions.waitForPageToLoad(3);
+	    HelperFunctions.staticWait(3);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait1.until(ExpectedConditions.visibilityOf(dealsTag));
+	    Assert.assertTrue(dealsTag.isDisplayed());
+	    HelperFunctions.staticWait(2);
+	    logo.click();
+	    test.info("Wait for page to load");
+	    HelperFunctions.waitForPageToLoad(3);
+	    HelperFunctions.staticWait(3);*/
+		WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    wait.until(ExpectedConditions.visibilityOf(logo));
+	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(terriMenu.isDisplayed());
+	    test.info("Verified territory menu is displayed");
+	    HelperFunctions.staticWait(2);
+	    terriMenu.click();
+	    test.info("Clicked on territory menu");
+	    HelperFunctions.staticWait(3);
+	    WebElement globalLink = Driver.getDriver().findElement(By.linkText("Global"));
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait1.until(ExpectedConditions.visibilityOf(globalLink));
+	    globalLink.click();
+	    test.info("Clicked on Global");
+	    HelperFunctions.waitForPageToLoad(15);
+	    test.info("Wait searchButton's visibility");
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait2.until(ExpectedConditions.visibilityOf(searchButton));
+	    HelperFunctions.staticWait(3);
+	    test.info("Clicked on search button");
+	    searchButton.click();
+	    HelperFunctions.staticWait(2);
+	    test.info("Clicked on search field and send text");
+	    searchField.click();
+	    HelperFunctions.staticWait(2);
+	    String mockContent="Tay";
+	    searchField.sendKeys(mockContent);
+	    HelperFunctions.staticWait(3);
+	    test.info("Clicked on enter");
+	    Actions actions = new Actions(Driver.getDriver());
+	    actions.sendKeys(Keys.ENTER).build().perform();
+	    test.info("Wait for page to load");
+	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.staticWait(3);
+	    test.info("Wait did you mean text's visibility");
+	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait4.until(ExpectedConditions.visibilityOf(didYouMean));
+	    Assert.assertTrue(didYouMean.isDisplayed());
+	    test.info("Verified didYouMean is displayed");
+	    HelperFunctions.staticWait(2);
+	    Assert.assertTrue(didYouMeanText.isDisplayed());
+	    test.info("Verified didYouMeanText is displayed");
+	    HelperFunctions.staticWait(2);
+	    test.info("Clicked on didYouMeanText item");
+	    didYouMeanText.click();
+	    test.info("Wait for page to load");
+	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.staticWait(3);
+	    test.info("Wait suggestedHeading's visibility");
+	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait5.until(ExpectedConditions.visibilityOf(suggestedHeading));
+	    String message="Showing results for";
+	    Assert.assertTrue(suggestedHeading.getText().contains(message));
+	    test.info("Verified suggestedHeading contains required message");
+	    HelperFunctions.staticWait(2);
+	    String message2="tax";
+	    Assert.assertTrue(suggestedText.getText().contains(message2));
+	    test.info("Verified suggestedText contains required keyword");
+	    HelperFunctions.staticWait(3);
+	    
 	}
 }
 

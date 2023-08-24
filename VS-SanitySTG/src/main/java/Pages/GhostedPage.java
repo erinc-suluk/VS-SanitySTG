@@ -86,7 +86,7 @@ public class GhostedPage extends HelperFunctions{
 	@FindBy(xpath="//img[@src='/content/dam/valuestore/us/en/thumbnails/Ghost.png']")
 	private WebElement ghostedPage;
 	
-	@FindBy(xpath="//img[contains(@alt, 'logo')]")
+	@FindBy(xpath="(//a[contains(@id, 'logo')])[1]")
 	private WebElement pwcLogo;
 	
 	@FindBy(xpath="//label[normalize-space()='Primary Category Tag *']")

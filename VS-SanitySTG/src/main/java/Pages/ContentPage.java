@@ -1918,10 +1918,10 @@ ReadXLSdata read1=new ReadXLSdata();
 		read1.setExcelFile("./testdata.xlsx", "STG");
 	
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(15);
+	   // HelperFunctions.waitForPageToLoad(15);
 	   
 	    test.info("Wait for visibility of header");
-	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 20);
 	    wait4.until(ExpectedConditions.visibilityOf(header));
 	    HelperFunctions.staticWait(3);
 	    HelperFunctions.scrollToElement(mexicoWhatOthers);

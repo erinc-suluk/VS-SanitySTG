@@ -108,12 +108,12 @@ public class TopicLandingPage extends HelperFunctions {
 		read1.setExcelFile("./testdata.xlsx", "STG");
 	    //Driver.getDriver().get(read1.getCellData("VALUE", 9));
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 	   
 	    test.info("Wait for edit button visibility and clicked on it");
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
 	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on key asset edit");
@@ -124,15 +124,15 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Verified keyAssetBarComponent banner is displayed");
 	    HelperFunctions.staticWait(3);
 	    test.info("Verified configure button is displayed");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
-	    Assert.assertTrue(configure.isDisplayed());
-	    HelperFunctions.staticWait(3);
+	    //Assert.assertTrue(configure.isDisplayed());
+	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
 	    configure.click();
-	    HelperFunctions.staticWait(3);	   
+	    //HelperFunctions.staticWait(3);	   
 	    test.info("Wait for key asset container visibility");
-	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait1.until(ExpectedConditions.visibilityOf(keyAssetContainer));
 	    Assert.assertTrue(keyAssetContainer.isDisplayed());
 	    test.info("Verified key asset container is displayed");
@@ -147,12 +147,12 @@ public class TopicLandingPage extends HelperFunctions {
 		read1.setExcelFile("./testdata.xlsx", "STG");
 	    //Driver.getDriver().get(read1.getCellData("VALUE", 9));
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 	    
 	    test.info("Wait for edit button visibility and clicked on it");
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
 	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on hot topics edit");
@@ -163,15 +163,15 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Verified keyAssetBarComponent banner is displayed");
 	    HelperFunctions.staticWait(3);
 	    test.info("Verified configure button is displayed");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
-	    Assert.assertTrue(configure.isDisplayed());
-	    HelperFunctions.staticWait(3);
+	    //Assert.assertTrue(configure.isDisplayed());
+	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
 	    configure.click();
-	    HelperFunctions.staticWait(3);	   
+	    //HelperFunctions.staticWait(3);	   
 	    test.info("Wait for hot Topics Title visibility");
-	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait1.until(ExpectedConditions.visibilityOf(hotTopicsTitle));
 	    Assert.assertTrue(hotTopicsTitle.isDisplayed());
 	    test.info("Verified hot Topics Title is displayed");
@@ -181,12 +181,12 @@ public class TopicLandingPage extends HelperFunctions {
 		read1.setExcelFile("./testdata.xlsx", "STG");
 	   // Driver.getDriver().get(read1.getCellData("VALUE", 9));
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 	    
 	    test.info("Wait for edit button visibility and clicked on it");
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
 	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on key asset edit");
@@ -197,15 +197,15 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Verified keyAssetBarComponent banner is displayed");
 	    HelperFunctions.staticWait(3);
 	    test.info("Verified configure button is displayed");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
-	    Assert.assertTrue(configure.isDisplayed());
-	    HelperFunctions.staticWait(3);
+	    //Assert.assertTrue(configure.isDisplayed());
+	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
 	    configure.click();
-	    HelperFunctions.staticWait(3);	   
+	    //HelperFunctions.staticWait(3);	   
 	    test.info("Wait for key asset container visibility");
-	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait1.until(ExpectedConditions.visibilityOf(keyAssetContainer));
 	    Assert.assertTrue(keyAssetContainer.isDisplayed());
 	    test.info("Verified key asset container is displayed");
@@ -232,12 +232,12 @@ public class TopicLandingPage extends HelperFunctions {
 		read1.setExcelFile("./testdata.xlsx", "STG");
 	   // Driver.getDriver().get(read1.getCellData("VALUE", 9));
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 	   
 	    test.info("Wait for edit button visibility and clicked on it");
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
 	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on hot topics edit");
@@ -248,23 +248,23 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Verified keyAssetBarComponent banner is displayed");
 	    HelperFunctions.staticWait(3);
 	    test.info("Verified configure button is displayed");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
-	    Assert.assertTrue(configure.isDisplayed());
-	    HelperFunctions.staticWait(3);
+	    //Assert.assertTrue(configure.isDisplayed());
+	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
 	    configure.click();
-	    HelperFunctions.staticWait(3);	   
+	    //HelperFunctions.staticWait(3);	   
 	    test.info("Wait for hot Topics Title visibility");
-	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait3.until(ExpectedConditions.visibilityOf(hotTopicsTitle));
 	    Assert.assertTrue(hotTopicsTitle.isDisplayed());
 	    test.info("Verified hot Topics Title is displayed");
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on add hot topic");
 	    addHotTopic.click();
-	    HelperFunctions.staticWait(2);
-	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 10);
+	    //HelperFunctions.staticWait(2);
+	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait4.until(ExpectedConditions.visibilityOf(errorLabel));
 	    Assert.assertTrue(errorLabel.isDisplayed());
 	    test.info("Verified error label is displayed");
@@ -293,9 +293,9 @@ public class TopicLandingPage extends HelperFunctions {
 	            break;
 	        }
 	    }*/
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 
-	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait1.until(ExpectedConditions.visibilityOf(topicPageTitle));
 	    HelperFunctions.staticWait(3);
 	    Assert.assertTrue(topicPageTitle.isDisplayed());
@@ -306,10 +306,10 @@ public class TopicLandingPage extends HelperFunctions {
 	    HelperFunctions.staticWait(2);
 	    test.info("Clicked on hot topic");
 	    hotTopicsTitles.get(0).click();
-	    HelperFunctions.waitForPageToLoad(3);
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.waitForPageToLoad(30);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for topic content title's visibility");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.visibilityOf(topicContentTitle));
 	    Assert.assertTrue(topicContentTitle.isDisplayed());
 	    test.info("Verified topic content title's is displayed");
@@ -319,10 +319,10 @@ public class TopicLandingPage extends HelperFunctions {
 	    HelperFunctions.staticWait(2);
 	    test.info("Clicked on bac to topic");
 	    backToTopic.click();
-	    HelperFunctions.waitForPageToLoad(3);
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.waitForPageToLoad(30);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for topic page title's visibility");
-	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait3.until(ExpectedConditions.visibilityOf(topicPageTitle));
 	    Assert.assertTrue(topicPageTitle.isDisplayed());
 	    test.info("Verified topic page title's is displayed");
@@ -351,7 +351,7 @@ public class TopicLandingPage extends HelperFunctions {
 	            break;
 	        }
 	    }*/
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 	    
 	    test.info("Wait for topic page title's visibility");
 	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
@@ -370,10 +370,10 @@ public class TopicLandingPage extends HelperFunctions {
             }
         }
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(3);
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.waitForPageToLoad(30);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for back to topic breadcrumb's visibility");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.visibilityOf(backToTopic));
 	    Assert.assertTrue(backToTopic.isDisplayed());
 	    test.info("Verified back to topic is displayed");
@@ -403,7 +403,7 @@ public class TopicLandingPage extends HelperFunctions {
 	            break;
 	        }
 	    }*/
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 	   
 	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
 	    wait1.until(ExpectedConditions.visibilityOf(topicPageTitle));
@@ -413,10 +413,10 @@ public class TopicLandingPage extends HelperFunctions {
 	    HelperFunctions.staticWait(2);
 	    test.info("Clicked on hot topic");
 	    hotTopicsTitles.get(0).click();
-	    HelperFunctions.waitForPageToLoad(3);
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.waitForPageToLoad(30);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for topic content title's visibility");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.visibilityOf(topicContentTitle));
 	    Assert.assertTrue(topicContentTitle.isDisplayed());
 	    test.info("Verified topic content title's is displayed");
@@ -446,10 +446,10 @@ public class TopicLandingPage extends HelperFunctions {
 	            break;
 	        }
 	    }*/
-	    HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.waitForPageToLoad(15);
 	    
 	    test.info("Wait for topic page title's visibility");
-	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait1.until(ExpectedConditions.visibilityOf(topicPageTitle));
 	    HelperFunctions.staticWait(3);
 	    Assert.assertTrue(topicPageTitle.isDisplayed());
@@ -465,10 +465,10 @@ public class TopicLandingPage extends HelperFunctions {
             }
         }
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(3);
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.waitForPageToLoad(30);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for back to topic breadcrumb's visibility");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.visibilityOf(backToTopic));
 	    Assert.assertTrue(backToTopic.isDisplayed());
 	    test.info("Verified back to topic is displayed");

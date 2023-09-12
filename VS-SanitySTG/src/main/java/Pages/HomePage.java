@@ -838,7 +838,7 @@ public class HomePage extends HelperFunctions {
 	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
 	    js2.executeScript("arguments[0].click();", firstArticleTitle);
 	    HelperFunctions.waitForPageToLoad(30);
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for logo visibility");
 	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 10);
 	    wait3.until(ExpectedConditions.visibilityOf(logo));
@@ -850,7 +850,7 @@ public class HomePage extends HelperFunctions {
 	    test.info("Clicked on logo");
 	    logo.click();
 	    HelperFunctions.waitForPageToLoad(30);
-	    HelperFunctions.staticWait(3);
+	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for filter title visibility");
 	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 10);
 	    wait4.until(ExpectedConditions.visibilityOf(filterTitle));
@@ -858,7 +858,7 @@ public class HomePage extends HelperFunctions {
 	    test.info("Clicked on first article description");
 	    JavascriptExecutor js3 = (JavascriptExecutor) Driver.getDriver();
 	    js3.executeScript("arguments[0].click();", firstArticleDescription);
-	    HelperFunctions.waitForPageToLoad(15);
+	    HelperFunctions.waitForPageToLoad(30);
 	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for logo visibility");
 	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 10);

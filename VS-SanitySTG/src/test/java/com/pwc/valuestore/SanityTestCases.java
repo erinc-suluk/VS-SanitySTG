@@ -425,7 +425,7 @@ public class SanityTestCases extends HelperFunctions {
 
 		    try {
 		        Driver.getDriver().get(read1.getCellData("VALUE", 10));
-		        //lpo.setLogin4();
+		        lpo.setLogin4();
 		        cp.setTagPillsExist(test);
 		        test.pass("Test passed");  
 		    } catch (Exception e) {

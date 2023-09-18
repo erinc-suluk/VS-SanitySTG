@@ -19,7 +19,7 @@
        <include name="WEB_8"/>
        <include name="WEB_9"/>
        <include name="WEB_10"/>
-       <include name="WEB_11"/>
+       <exclude name="WEB_11"/>
        <include name="WEB_12"/>
        <include name="WEB_13"/>
        <exclude name="WEB_14"/>

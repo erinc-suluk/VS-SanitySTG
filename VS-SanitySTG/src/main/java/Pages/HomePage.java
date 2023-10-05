@@ -262,10 +262,10 @@ public class HomePage extends HelperFunctions {
 	@FindBy(xpath="//span[@class='vs-search__suggestion-text']")
 	private WebElement didYouMeanText;
 	
-	@FindBy(xpath="//div[@class='vs-search__suggested-text-wrapper']")
+	@FindBy(xpath="//div[@class='vs-search__showing-result']//p")
 	private WebElement suggestedHeading;
 	
-	@FindBy(xpath="//span[@class='vs-search__suggested-text']")
+	@FindBy(xpath="//span[@class='vs-search__showing-result-topic']")
 	private WebElement suggestedText;
 	
 	ReadXLSdata read1=new ReadXLSdata();
@@ -2564,7 +2564,7 @@ public class HomePage extends HelperFunctions {
 	    test.info("Wait suggestedHeading's visibility");
 	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait5.until(ExpectedConditions.visibilityOf(suggestedHeading));
-	    String message="Showing results for";
+	    String message="Showing";
 	    Assert.assertTrue(suggestedHeading.getText().contains(message));
 	    test.info("Verified suggestedHeading contains required message");
 	    HelperFunctions.staticWait(2);

@@ -182,10 +182,23 @@ public class TopicLandingPage extends HelperFunctions {
 	   // Driver.getDriver().get(read1.getCellData("VALUE", 9));
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
-	    
-	    test.info("Wait for edit button visibility and clicked on it");
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
+	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    test.info("Wait for edit button visibility and clicked on it");
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.elementToBeClickable(editButton));
 	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);
@@ -233,10 +246,23 @@ public class TopicLandingPage extends HelperFunctions {
 	   // Driver.getDriver().get(read1.getCellData("VALUE", 9));
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
-	   
-	    test.info("Wait for edit button visibility and clicked on it");
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
+	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    test.info("Wait for edit button visibility and clicked on it");
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.elementToBeClickable(editButton));
 	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);

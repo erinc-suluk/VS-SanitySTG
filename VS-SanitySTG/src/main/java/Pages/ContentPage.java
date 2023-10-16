@@ -384,131 +384,162 @@ ReadXLSdata read1=new ReadXLSdata();
 	
 	public void setPageTitle(ExtentTest test) throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "STG");
-	    //Driver.getDriver().get(read1.getCellData("VALUE", 2));
-		 test.info("Wait for page to load");
-		    //HelperFunctions.waitForPageToLoad(15);
-		   
-		    test.info("Wait for page title's visibility and get the text");
-		    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-		    wait.until(ExpectedConditions.visibilityOf(previewButton));
-		    previewButton.click();
-		    Driver.getDriver().switchTo().frame(0);
-		    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait1.until(ExpectedConditions.visibilityOf(pageTitle));
-		    String title=pageTitle.getText();
-		    System.out.println(title);
-		    test.info("Switch back to default content and click page info button and open properties");
-		    Driver.getDriver().switchTo().defaultContent();
-		    HelperFunctions.staticWait(2);
-		    //test.info("Go to authoring content page");
-		   // Driver.getDriver().get(read1.getCellData("VALUE", 2));
-		    test.info("Wait for page to load");
-		   // HelperFunctions.waitForPageToLoad(15);
-		    //HelperFunctions.staticWait(3);
-		    test.info("Wait for page info's visibility and clicked on it");
-		    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait2.until(ExpectedConditions.visibilityOf(pageInfo));
-		    try {
-		    	Thread.sleep(3000);
-		    }catch(InterruptedException e) {
-		    	e.printStackTrace();
-		    }
-		    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-		    js.executeScript("arguments[0].click();", pageInfo);
-		    wait2.until(ExpectedConditions.visibilityOf(openPro));
-		    test.info("Clicked on open properties");
-		    openPro.click();
-		    HelperFunctions.waitForPageToLoad(60);
-		    //HelperFunctions.staticWait(3);
-		    String title2=titleField.getAttribute("value");
-		    System.out.println(title2);
-		    Assert.assertEquals(title, title2);
-		    test.info("Verify the title value matches the page title");
-		    HelperFunctions.staticWait(2);
-		    test.info("Enter new title value and save and close");
-		    titleField.click();
-		    HelperFunctions.staticWait(2);
-		    titleField.clear();
-		    HelperFunctions.staticWait(2);
-		    String mockTitle="erinc-content2";
-		    titleField.sendKeys(mockTitle);
-		    HelperFunctions.staticWait(2);
-		    saveClose.click();
-		    HelperFunctions.waitForPageToLoad(60);
-		    try {
-		    	Thread.sleep(3000);
-		    }catch(InterruptedException e) {
-		    	e.printStackTrace();
-		    }
-		    //test.info("Wait for page info's visibility");
-		   // JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
-		   // js2.executeScript("arguments[0].click();", pageInfo);
-		   // HelperFunctions.staticWait(3);
-		   // test.info("Clicked on publish page");
-		   // publishPage.click();
-		  //  HelperFunctions.staticWait(3);
-		    previewButton.click();
-		    HelperFunctions.staticWait(2);
-		    Driver.getDriver().switchTo().frame(0);
-		    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait3.until(ExpectedConditions.visibilityOf(pageTitle));
-		   // test.info("Go to content page publisher");
-		    //Driver.getDriver().get(read1.getCellData("VALUE", 10));
-		   // test.info("Wait for page to load");
-		   // HelperFunctions.waitForPageToLoad(15);
-		    //HelperFunctions.staticWait(3);
-		   // test.info("Wait for visibility of the page title");
-		   // WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
-		   // wait2.until(ExpectedConditions.visibilityOf(pageTitle));
-		    String title3=pageTitle.getText();
-		    System.out.println(title3);
-		    Assert.assertEquals(mockTitle,title3);
-		    test.info("Verify the title value matches the page title");
-		    HelperFunctions.staticWait(2);
-		  //  test.info("Go to authoring content page");
-		  //  Driver.getDriver().get(read1.getCellData("VALUE", 2));
-		  //  test.info("Wait for page to load");
-		  //  HelperFunctions.waitForPageToLoad(15);
-		    //HelperFunctions.staticWait(3);
-		    Driver.getDriver().switchTo().defaultContent();
-		    HelperFunctions.staticWait(2);
-		    test.info("Wait for page info's visibility and clicked on it");
-		    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait4.until(ExpectedConditions.visibilityOf(pageInfo));
-		    try {
-		    	Thread.sleep(3000);
-		    }catch(InterruptedException e) {
-		    	e.printStackTrace();
-		    }
-		    JavascriptExecutor js3 = (JavascriptExecutor) Driver.getDriver();
-		    js3.executeScript("arguments[0].click();", pageInfo);
-		    wait4.until(ExpectedConditions.visibilityOf(openPro));
-		    test.info("Clicked on open properties");
-		    openPro.click();
-		    HelperFunctions.waitForPageToLoad(15);
-		    //HelperFunctions.staticWait(3);
-		    test.info("Enter new first title value and save and close");
-		    titleField.click();
-		    HelperFunctions.staticWait(2);
-		    titleField.clear();
-		    HelperFunctions.staticWait(2);
-		    titleField.sendKeys("erinc-content Automation pages");
-		    HelperFunctions.staticWait(2);
-		    saveClose.click();
-		    HelperFunctions.waitForPageToLoad(60);
-		    //HelperFunctions.staticWait(3);
-		    test.info("Wait for page info's visibility");
-		    try {
-		    	Thread.sleep(3000);
-		    }catch(InterruptedException e) {
-		    	e.printStackTrace();
-		    }
-		    JavascriptExecutor js4 = (JavascriptExecutor) Driver.getDriver();
-		    js4.executeScript("arguments[0].click();", pageInfo);
-		    wait4.until(ExpectedConditions.visibilityOf(publishPage));
-		    test.info("Clicked on publish page");
-		    publishPage.click();
-		    HelperFunctions.staticWait(5);
+		test.info("Wait for page to load");
+	    //HelperFunctions.waitForPageToLoad(15);
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+	    test.info("Wait for page title's visibility and get the text");
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	   // wait.until(ExpectedConditions.visibilityOf(previewButton));
+	   /* js.executeScript("arguments[0].click();", editButton);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", previewButton);
+	    //previewButton.click();
+	    Driver.getDriver().switchTo().frame(0);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait1.until(ExpectedConditions.visibilityOf(pageTitle));
+	    String title=pageTitle.getText();
+	    System.out.println(title);
+	    test.info("Switch back to default content and click page info button and open properties");
+	    Driver.getDriver().switchTo().defaultContent();
+	    HelperFunctions.staticWait(2);
+	    //test.info("Go to authoring content page");
+	   // Driver.getDriver().get(read1.getCellData("VALUE", 2));
+	    test.info("Wait for page to load");
+	   // HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.staticWait(3);
+	    test.info("Wait for page info's visibility and clicked on it");*/
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait2.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", previewButton);
+	    Driver.getDriver().switchTo().frame(0);
+	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait1.until(ExpectedConditions.visibilityOf(pageTitle));
+	    String title=pageTitle.getText();
+	    System.out.println(title);
+	    test.info("Switch back to default content and click page info button and open properties");
+	    Driver.getDriver().switchTo().defaultContent();
+	    HelperFunctions.staticWait(2);
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    wait2.until(ExpectedConditions.visibilityOf(openPro));
+	    test.info("Clicked on open properties");
+	    openPro.click();
+	    HelperFunctions.waitForPageToLoad(60);
+	    //HelperFunctions.staticWait(3);
+	    String title2=titleField.getAttribute("value");
+	    System.out.println(title2);
+	    Assert.assertEquals(title, title2);
+	    test.info("Verify the title value matches the page title");
+	    HelperFunctions.staticWait(2);
+	    test.info("Enter new title value and save and close");
+	    titleField.click();
+	    HelperFunctions.staticWait(2);
+	    titleField.clear();
+	    HelperFunctions.staticWait(2);
+	    String mockTitle="erinc-content2";
+	    titleField.sendKeys(mockTitle);
+	    HelperFunctions.staticWait(2);
+	    saveClose.click();
+	    HelperFunctions.waitForPageToLoad(60);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    //test.info("Wait for page info's visibility");
+	   // JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	   // js2.executeScript("arguments[0].click();", pageInfo);
+	   // HelperFunctions.staticWait(3);
+	   // test.info("Clicked on publish page");
+	   // publishPage.click();
+	  //  HelperFunctions.staticWait(3);
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", previewButton);
+	    HelperFunctions.staticWait(2);
+	    Driver.getDriver().switchTo().frame(0);
+	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait3.until(ExpectedConditions.visibilityOf(pageTitle));
+	   // test.info("Go to content page publisher");
+	    //Driver.getDriver().get(read1.getCellData("VALUE", 10));
+	   // test.info("Wait for page to load");
+	   // HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.staticWait(3);
+	   // test.info("Wait for visibility of the page title");
+	   // WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	   // wait2.until(ExpectedConditions.visibilityOf(pageTitle));
+	    String title3=pageTitle.getText();
+	    System.out.println(title3);
+	    Assert.assertEquals(mockTitle,title3);
+	    test.info("Verify the title value matches the page title");
+	    HelperFunctions.staticWait(2);
+	  //  test.info("Go to authoring content page");
+	  //  Driver.getDriver().get(read1.getCellData("VALUE", 2));
+	  //  test.info("Wait for page to load");
+	  //  HelperFunctions.waitForPageToLoad(15);
+	    //HelperFunctions.staticWait(3);
+	    Driver.getDriver().switchTo().defaultContent();
+	    //HelperFunctions.staticWait(2);
+	    test.info("Wait for page info's visibility and clicked on it");
+	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait4.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    JavascriptExecutor js3 = (JavascriptExecutor) Driver.getDriver();
+	    js3.executeScript("arguments[0].click();", pageInfo);
+	    wait4.until(ExpectedConditions.visibilityOf(openPro));
+	    test.info("Clicked on open properties");
+	    openPro.click();
+	    HelperFunctions.waitForPageToLoad(60);
+	    //HelperFunctions.staticWait(3);
+	    test.info("Enter new first title value and save and close");
+	    titleField.click();
+	    HelperFunctions.staticWait(2);
+	    titleField.clear();
+	    HelperFunctions.staticWait(2);
+	    titleField.sendKeys("erinc-content Automation pages");
+	    HelperFunctions.staticWait(2);
+	    saveClose.click();
+	    HelperFunctions.waitForPageToLoad(60);
+	    //HelperFunctions.staticWait(3);
+	    test.info("Wait for page info's visibility");
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    JavascriptExecutor js4 = (JavascriptExecutor) Driver.getDriver();
+	    js4.executeScript("arguments[0].click();", pageInfo);
+	    wait4.until(ExpectedConditions.visibilityOf(publishPage));
+	    test.info("Clicked on publish page");
+	    publishPage.click();
+	    HelperFunctions.staticWait(5);
 	}
 	
 	public void setMandatoryFields(ExtentTest test) throws Exception {
@@ -701,27 +732,68 @@ ReadXLSdata read1=new ReadXLSdata();
 	}
 	public void setAddingText(ExtentTest test) throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "STG");
-	    //Driver.getDriver().get(read1.getCellData("VALUE", 2));
-		test.info("Wait for page to load");
+		//Driver.getDriver().get(read1.getCellData("VALUE", 2));
+	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
-	   
-	    test.info("Wait for preview icon is displayed and click on it");
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.elementToBeClickable(previewButton));
-	    //HelperFunctions.staticWait(3);
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait2.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    previewButton.click();
+	    //js.executeScript("arguments[0].click();", previewButton);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    //js.executeScript("arguments[0].click();", editButton);
+	    editButton.click();
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    //js.executeScript("arguments[0].click();", previewButton);
+	    previewButton.click();
+	    //Driver.getDriver().switchTo().frame(0);
+	    test.info("Wait for preview icon is displayed and click on it");
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.elementToBeClickable(previewButton));
+	    //HelperFunctions.staticWait(3);
+	    //previewButton.click();
 	    Driver.getDriver().switchTo().frame(0);
 	    WebDriverWait wait1 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait1.until(ExpectedConditions.visibilityOf(richText));
 	    test.info("Getting the rich text's font weight");
 	    String fontWeight = richText.getCssValue("font-weight");
 	    Driver.getDriver().switchTo().defaultContent();
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    test.info("Clicked on edit button to edit the rich text");
 	    editButton.click();
-	    HelperFunctions.staticWait(2);
+	    //js.executeScript("arguments[0].click();", editButton);
+	    //editButton.click();
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    editableText.click();
 	    //HelperFunctions.staticWait(2);
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
+	    //WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
 	    configure.click();
 	    //HelperFunctions.staticWait(2);
@@ -729,7 +801,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait3.until(ExpectedConditions.visibilityOf(textArea));
 	    textArea.click();
-	    //HelperFunctions.staticWait(2);
+	    HelperFunctions.staticWait(10);
 	    test.info("Wait for styles icon is displayed and Verified");
 	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait4.until(ExpectedConditions.visibilityOf(styles));
@@ -742,7 +814,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    Assert.assertTrue(alignment.isDisplayed());
 	    HelperFunctions.staticWait(2);
 	    test.info("Clicked on content details");
-	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 30);
+	    WebDriverWait wait5 = new WebDriverWait(Driver.getDriver(), 10);
 	    wait5.until(ExpectedConditions.elementToBeClickable(contentDetails));
         contentDetails.click();
         HelperFunctions.staticWait(2);
@@ -753,7 +825,7 @@ ReadXLSdata read1=new ReadXLSdata();
         HelperFunctions.staticWait(3);
         done.click();
         HelperFunctions.staticWait(5);
-        //test.info("Clicked on page info and published the page");
+        test.info("Clicked on page info and published the page");
        /* JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    js.executeScript("arguments[0].click();", pageInfo);
 	    HelperFunctions.staticWait(2);
@@ -761,9 +833,19 @@ ReadXLSdata read1=new ReadXLSdata();
 	    wait6.until(ExpectedConditions.elementToBeClickable(publishPage));
 	    publishPage.click();
 	    HelperFunctions.staticWait(3);*/
-	    WebDriverWait wait7 = new WebDriverWait(Driver.getDriver(), 30);
-	    wait7.until(ExpectedConditions.elementToBeClickable(previewButton));
-	    previewButton.click();
+        wait2.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", previewButton);
 	    Driver.getDriver().switchTo().frame(0);
 	    WebDriverWait wait8 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait8.until(ExpectedConditions.visibilityOf(richText));
@@ -773,7 +855,13 @@ ReadXLSdata read1=new ReadXLSdata();
 	    Assert.assertNotEquals(fontWeight, fontWeight2);
 	    Driver.getDriver().switchTo().defaultContent();
 	    test.info("Clicked on edit button to edit the rich text");
-	    editButton.click();
+	    js.executeScript("arguments[0].click();", editButton);
+	    //editButton.click();
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    HelperFunctions.staticWait(2);
 	    editableText.click();
 	    //HelperFunctions.staticWait(2);
@@ -792,7 +880,7 @@ ReadXLSdata read1=new ReadXLSdata();
         test.info("Selected whole content and clicked on bold");
         contentDetails.sendKeys(Keys.chord(Keys.CONTROL, "a"));
        // HelperFunctions.staticWait(2);
-        WebDriverWait wait11 = new WebDriverWait(Driver.getDriver(), 10);
+        WebDriverWait wait11 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait11.until(ExpectedConditions.visibilityOf(bold));
         bold.click();
         HelperFunctions.staticWait(3);
@@ -809,104 +897,135 @@ ReadXLSdata read1=new ReadXLSdata();
 	}
 	public void setTitleEdit(ExtentTest test) throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "STG");
-	    //Driver.getDriver().get(read1.getCellData("VALUE", 2));
-		 test.info("Wait for page to load");
-		    //HelperFunctions.waitForPageToLoad(15);
-		  
-		    test.info("Wait for edit button visibility and clicked on it");
-		    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-		    wait.until(ExpectedConditions.elementToBeClickable(editButton));
-		    //HelperFunctions.staticWait(3);
-		    editButton.click();
-		    HelperFunctions.staticWait(3);
-		    test.info("Scroll to the edit title and clicked on it");
-		    HelperFunctions.scrollToElement(editTitle);
-		    HelperFunctions.staticWait(3);
-		    editTitle.click();
-		   // HelperFunctions.staticWait(3);
-		    test.info("Clicked on configure button");
-		    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait2.until(ExpectedConditions.elementToBeClickable(configure));
-		    configure.click();
-		    //HelperFunctions.staticWait(3);
-		    String actualTitle="Who's impacted";
-		    String mockTitle="Benefits";
-		    test.info("Wait for title field visibility and clicked on it");
-		    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait3.until(ExpectedConditions.visibilityOf(titleField3));
-		    titleField3.click();
-		    HelperFunctions.staticWait(2);
-		    titleField3.clear();
-		    HelperFunctions.staticWait(2);
-		    test.info("Changed the title and clicked on done button");
-		    titleField3.sendKeys(mockTitle);
-		    HelperFunctions.staticWait(2);
-		    done.click();
-	        HelperFunctions.staticWait(5);
-	       /* test.info("Clicked on page info and published the page");
-	        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-		    js.executeScript("arguments[0].click();", pageInfo);
-		    HelperFunctions.staticWait(2);
-		    WebDriverWait wait6 = new WebDriverWait(Driver.getDriver(), 10);
-		    wait6.until(ExpectedConditions.elementToBeClickable(publishPage));
-		    publishPage.click();
-		    WebDriverWait wait7 = new WebDriverWait(Driver.getDriver(), 10);
-		    wait7.until(ExpectedConditions.visibilityOf(publishMessage));*/
-		    //HelperFunctions.staticWait(3);
-		    WebDriverWait wait8 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait8.until(ExpectedConditions.elementToBeClickable(previewButton));
-		    previewButton.click();
-		    Driver.getDriver().switchTo().frame(0);
-		    WebDriverWait wait9 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait9.until(ExpectedConditions.visibilityOf(title2));
-		    test.info("Verified the title has been changed");
-		    Assert.assertTrue(title2.getText().contains(mockTitle));
-		    Driver.getDriver().switchTo().defaultContent();
-		    test.info("Clicked on the edit button");
-		    editButton.click();
-		   // HelperFunctions.staticWait(3);
-		   // HelperFunctions.scrollToElement(editTitle);
-		    test.info("Clicked on the edit title");
-		    HelperFunctions.staticWait(3);
-		    editTitle.click();
-		    //HelperFunctions.staticWait(3);
-		    test.info("Clicked on configure button");
-		    WebDriverWait wait10 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait10.until(ExpectedConditions.elementToBeClickable(configure));
-		    configure.click();
-		    //HelperFunctions.staticWait(3);
-		    test.info("Clicked on title field and enter the first title");
-		    WebDriverWait wait11 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait11.until(ExpectedConditions.visibilityOf(titleField3));
-		    titleField3.click();
-		    HelperFunctions.staticWait(2);
-		    titleField3.clear();
-		    HelperFunctions.staticWait(2);
-		    titleField3.sendKeys(actualTitle);
-		    HelperFunctions.staticWait(2);
-		    test.info("Clicked on done button");
-		    done.click();
-	        HelperFunctions.staticWait(5);
-	        test.info("Clicked on page info and published the page");
-	        JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
-		    js2.executeScript("arguments[0].click();", pageInfo);
-		    //HelperFunctions.staticWait(2);
-		    WebDriverWait wait12 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait12.until(ExpectedConditions.elementToBeClickable(publishPage));
-		    publishPage.click();
-		    //HelperFunctions.staticWait(7);
-		    //WebDriverWait wait10 = new WebDriverWait(Driver.getDriver(), 10);
-		   // wait10.until(ExpectedConditions.visibilityOf(publishMessage));
-		    //HelperFunctions.staticWait(3);
-		    WebDriverWait wait13 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait13.until(ExpectedConditions.elementToBeClickable(previewButton));
-		    previewButton.click();
-		    Driver.getDriver().switchTo().frame(0);
-		    WebDriverWait wait14 = new WebDriverWait(Driver.getDriver(), 30);
-		    wait14.until(ExpectedConditions.visibilityOf(title2));
-		    test.info("Verified the title has been changed");
-		    Assert.assertTrue(title2.getText().contains(actualTitle));
-		    HelperFunctions.staticWait(3);
+		 //Driver.getDriver().get(read1.getCellData("VALUE", 2));
+	    test.info("Wait for page to load");
+	    //HelperFunctions.waitForPageToLoad(15);
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    //previewButton.click();
+	    test.info("Wait for edit button visibility and clicked on it");
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.elementToBeClickable(editButton));
+	    //HelperFunctions.staticWait(3);
+	    editButton.click();
+	    HelperFunctions.staticWait(3);
+	    test.info("Scroll to the edit title and clicked on it");
+	    HelperFunctions.scrollToElement(editTitle);
+	    HelperFunctions.staticWait(3);
+	    editTitle.click();
+	   // HelperFunctions.staticWait(3);
+	    test.info("Clicked on configure button");
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
+	    configure.click();
+	    //HelperFunctions.staticWait(3);
+	    String actualTitle="Who's impacted";
+	    String mockTitle="Benefits";
+	    test.info("Wait for title field visibility and clicked on it");
+	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait3.until(ExpectedConditions.visibilityOf(titleField3));
+	    titleField3.click();
+	    HelperFunctions.staticWait(2);
+	    titleField3.clear();
+	    HelperFunctions.staticWait(2);
+	    test.info("Changed the title and clicked on done button");
+	    titleField3.sendKeys(mockTitle);
+	    HelperFunctions.staticWait(2);
+	    done.click();
+        //HelperFunctions.staticWait(5);
+       /* test.info("Clicked on page info and published the page");
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    HelperFunctions.staticWait(2);
+	    WebDriverWait wait6 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait6.until(ExpectedConditions.elementToBeClickable(publishPage));
+	    publishPage.click();
+	    WebDriverWait wait7 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait7.until(ExpectedConditions.visibilityOf(publishMessage));*/
+	    //HelperFunctions.staticWait(3);
+	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    //WebDriverWait wait8 = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait8.until(ExpectedConditions.elementToBeClickable(previewButton));
+	    previewButton.click();
+	    Driver.getDriver().switchTo().frame(0);
+	    WebDriverWait wait9 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait9.until(ExpectedConditions.visibilityOf(title2));
+	    test.info("Verified the title has been changed");
+	    Assert.assertTrue(title2.getText().contains(mockTitle));
+	    Driver.getDriver().switchTo().defaultContent();
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    test.info("Clicked on the edit button");
+	    editButton.click();
+	   // HelperFunctions.staticWait(3);
+	   // HelperFunctions.scrollToElement(editTitle);
+	    test.info("Clicked on the edit title");
+	    HelperFunctions.staticWait(3);
+	    editTitle.click();
+	    //HelperFunctions.staticWait(3);
+	    test.info("Clicked on configure button");
+	    WebDriverWait wait10 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait10.until(ExpectedConditions.elementToBeClickable(configure));
+	    configure.click();
+	    //HelperFunctions.staticWait(3);
+	    test.info("Clicked on title field and enter the first title");
+	    WebDriverWait wait11 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait11.until(ExpectedConditions.visibilityOf(titleField3));
+	    titleField3.click();
+	    HelperFunctions.staticWait(2);
+	    titleField3.clear();
+	    HelperFunctions.staticWait(2);
+	    titleField3.sendKeys(actualTitle);
+	    HelperFunctions.staticWait(2);
+	    test.info("Clicked on done button");
+	    done.click();
+        HelperFunctions.staticWait(5);
+        test.info("Clicked on page info and published the page");
+        JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	    js2.executeScript("arguments[0].click();", pageInfo);
+	    //HelperFunctions.staticWait(2);
+	    WebDriverWait wait12 = new WebDriverWait(Driver.getDriver(), 30);
+	    wait12.until(ExpectedConditions.elementToBeClickable(publishPage));
+	    publishPage.click();
+	    //HelperFunctions.staticWait(5);
+	    //WebDriverWait wait10 = new WebDriverWait(Driver.getDriver(), 10);
+	   // wait10.until(ExpectedConditions.visibilityOf(publishMessage));
+	    //HelperFunctions.staticWait(3);
+	    WebDriverWait wait13 = new WebDriverWait(Driver.getDriver(), 15);
+	    wait13.until(ExpectedConditions.elementToBeClickable(previewButton));
+	    previewButton.click();
+	    Driver.getDriver().switchTo().frame(0);
+	    WebDriverWait wait14 = new WebDriverWait(Driver.getDriver(), 10);
+	    wait14.until(ExpectedConditions.visibilityOf(title2));
+	    test.info("Verified the title has been changed");
+	    Assert.assertTrue(title2.getText().contains(actualTitle));
+	    HelperFunctions.staticWait(3);
 	}
 	public void setAccordion(ExtentTest test) throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "STG");
@@ -2056,10 +2175,23 @@ ReadXLSdata read1=new ReadXLSdata();
 	    //Driver.getDriver().get(read1.getCellData("VALUE", 2));
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
-	  
-	    test.info("Wait for edit button visibility and clicked on it");
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
+	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    test.info("Wait for edit button visibility and clicked on it");
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.elementToBeClickable(editButton));
 	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);
@@ -2100,10 +2232,23 @@ ReadXLSdata read1=new ReadXLSdata();
 	    //Driver.getDriver().get(read1.getCellData("VALUE", 2));
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
-	  
-	    test.info("Wait for edit button visibility and clicked on it");
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.elementToBeClickable(editButton));
+	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    test.info("Wait for edit button visibility and clicked on it");
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.elementToBeClickable(editButton));
 	    //HelperFunctions.staticWait(3);
 	    editButton.click();
 	    HelperFunctions.staticWait(3);

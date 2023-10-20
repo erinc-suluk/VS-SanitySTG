@@ -379,6 +379,9 @@ public class ContentPage extends HelperFunctions{
 	@FindBy(xpath="//a[contains(@class, 'contact')]")
 	private WebElement contact;
 	
+	@FindBy(xpath="//textarea[@name='./jcr:description']")
+	private WebElement descriptionField;
+	
 	
 ReadXLSdata read1=new ReadXLSdata();
 	
@@ -2284,6 +2287,69 @@ ReadXLSdata read1=new ReadXLSdata();
 	    HelperFunctions.staticWait(2);
 	    Assert.assertTrue(contact.getText().contains(value1));
 	    HelperFunctions.staticWait(3);
+	}
+	public void setExternalPageMandatoryFields(ExtentTest test) throws Exception {
+		read1.setExcelFile("./testdata.xlsx", "QA");
+	   
+        test.info("Wait for page to load");
+	  
+	   
+	    test.info("Wait for page info's visibility and clicked on it");
+	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 60);
+	    wait2.until(ExpectedConditions.visibilityOf(pageInfo));
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+	    js.executeScript("arguments[0].click();", pageInfo);
+	    wait2.until(ExpectedConditions.visibilityOf(openPro));
+	    test.info("Clicked on open properties");
+	    openPro.click();
+	    HelperFunctions.waitForPageToLoad(60);
+	    wait2.until(ExpectedConditions.visibilityOf(titleField));
+	    test.info("Clicking on title field and clear");
+	    titleField.click();
+	    HelperFunctions.staticWait(2);
+	    titleField.clear();
+	    wait2.until(ExpectedConditions.visibilityOf(errorMessage));
+	    test.info("Verified error message is displayed");
+	    String title="Automation External Page";
+	    HelperFunctions.staticWait(2);
+	    titleField.click();
+	    HelperFunctions.staticWait(2);
+	    titleField.sendKeys(title);
+	    test.info("Clicked on title field and send title");
+	    HelperFunctions.staticWait(2);
+        descriptionField.click();
+        HelperFunctions.staticWait(2);
+        descriptionField.clear();
+	    test.info("Clicking on description field and clear it");
+	    wait2.until(ExpectedConditions.visibilityOf(errorMessage));
+	    test.info("Verified error message is displayed");
+	    String desc="Automation Testing";
+	    HelperFunctions.staticWait(2);
+	    descriptionField.click();
+	    HelperFunctions.staticWait(2);
+	    descriptionField.sendKeys(desc);
+	    test.info("Clicked on description field and send description");
+	    HelperFunctions.staticWait(2);
+	    saveClose.click();
+	    test.info("Clicked on save and close");
+	    HelperFunctions.waitForPageToLoad(90);
+	    try {
+	    	Thread.sleep(3000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    test.info("Wait for page info's visibility and clicked on it");
+	    JavascriptExecutor js4 = (JavascriptExecutor) Driver.getDriver();
+	    js4.executeScript("arguments[0].click();", pageInfo);
+	    wait2.until(ExpectedConditions.visibilityOf(publishPage));
+	    test.info("Clicked on publish page");
+	    publishPage.click();
+	    HelperFunctions.staticWait(5);
 	}
 	
 }

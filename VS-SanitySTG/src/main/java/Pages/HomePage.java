@@ -367,18 +367,19 @@ public class HomePage extends HelperFunctions {
 	    logo.click();*/
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
-	 
+	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
 	    test.info("Wait for logo visibility");
 	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 10);
 	    wait2.until(ExpectedConditions.visibilityOf(logo));
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on select topic");
-        selectTopic.click();
+	    js2.executeScript("arguments[0].click();", selectTopic);
+        //selectTopic.click();
         //HelperFunctions.staticWait(2);
         test.info("Wait for deals checkbox visibility and clicked on it");
         WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 10);
 	    wait3.until(ExpectedConditions.visibilityOf(dealsCheckbox));
-	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	    
 	    js2.executeScript("arguments[0].click();", dealsCheckbox);
 	   // dealsCheckbox.click();
 	    HelperFunctions.staticWait(2);
@@ -668,7 +669,7 @@ public class HomePage extends HelperFunctions {
 	    logo.click();*/
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
-	  
+	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
 	    test.info("Wait for logo visibility");
 	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 20);
 	    wait2.until(ExpectedConditions.visibilityOf(logo));
@@ -677,12 +678,13 @@ public class HomePage extends HelperFunctions {
 	    test.info("Verified the first asset is displayed");
 	    HelperFunctions.staticWait(2);
 	    test.info("Clicked on select topic");
-        selectTopic.click();
+	    js2.executeScript("arguments[0].click();", selectTopic);
+        //selectTopic.click();
         //HelperFunctions.staticWait(2);
         test.info("Wait for deals checkbox visibility and clicked on it");
         WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 20);
 	    wait3.until(ExpectedConditions.visibilityOf(dealsCheckbox));
-	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	    
 	    js2.executeScript("arguments[0].click();", dealsCheckbox);
 	    HelperFunctions.staticWait(2);
 	    test.info("Scroll to first asset");
@@ -2245,12 +2247,16 @@ public class HomePage extends HelperFunctions {
 	    HelperFunctions.staticWait(3); 
 	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    js.executeScript("arguments[0].click();", articleFavIcons.get(0));
-	    HelperFunctions.staticWait(5);
+	    try {
+	    	Thread.sleep(7000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
 	    js2.executeScript("arguments[0].click();", articleFavIcons2.get(0));
 	    //articleFavIcons.get(0).click();
 	    test.info("Added 2 elements to the favorites");
-	    HelperFunctions.staticWait(5);
+	    HelperFunctions.staticWait(10);
 	    test.info("Clicked on fav icon link");
 	    favIconLink.click();
 	    test.info("Wait for fav header's visibility");

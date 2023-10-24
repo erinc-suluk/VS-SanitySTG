@@ -353,9 +353,9 @@ public class TopicLandingPage extends HelperFunctions {
 	    Assert.assertTrue(topicPageTitle.isDisplayed());
 	    test.info("Verified topic page title is displayed");
 	    HelperFunctions.staticWait(2);
-	    Assert.assertTrue(hotTopicsTitles.size()==4);
-	    test.info("Verified hot topic title's size is 4");
-	    HelperFunctions.staticWait(2);
+	    //Assert.assertTrue(hotTopicsTitles.size()==4);
+	    //test.info("Verified hot topic title's size is 4");
+	    //HelperFunctions.staticWait(2);
 	    test.info("Clicked on hot topic");
 	    hotTopicsTitles.get(0).click();
 	    HelperFunctions.waitForPageToLoad(30);

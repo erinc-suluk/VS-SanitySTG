@@ -289,6 +289,9 @@ public class HomePage extends HelperFunctions {
 	@FindBy(xpath="//span[@class='vs-search__applied-territory']")
 	private static List<WebElement> terriLabels;
 	
+	@FindBy(xpath="//span[@class='vs-search__selected-territory-count']")
+	private WebElement countryCount;
+	
 	ReadXLSdata read1=new ReadXLSdata();
 	
 	public void setAccesingHomepage(ExtentTest test) throws Exception {
@@ -2664,7 +2667,13 @@ public class HomePage extends HelperFunctions {
 	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    js.executeScript("arguments[0].click();", mexicoCheckbox);
 	    test.info("Clicked on mexico checkbox");
-	    HelperFunctions.staticWait(5);
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    Assert.assertTrue(countryCount.getText().contains("Mexico"));
+	    /*HelperFunctions.staticWait(5);
 	    boolean foundMexico=false;
 	    for(WebElement label:terriLabels) {
 	    	System.out.println(label.getText());
@@ -2678,8 +2687,12 @@ public class HomePage extends HelperFunctions {
 	    	Assert.assertTrue(true);
 	    }else {
 	    	Assert.assertTrue(false);
+	    }*/
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
 	    }
-	    HelperFunctions.staticWait(3);
 	    js.executeScript("arguments[0].click();", mexicoCheckbox);
 	    try {
 	    	Thread.sleep(4000);
@@ -2687,7 +2700,13 @@ public class HomePage extends HelperFunctions {
 	    	e.printStackTrace();
 	    }
 	    js.executeScript("arguments[0].click();", globalCheckbox);
-	    HelperFunctions.staticWait(5);
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
+	    Assert.assertTrue(countryCount.getText().contains("Global"));
+	    /*HelperFunctions.staticWait(5);
 	    boolean foundGlobal=false;
 	    for(WebElement label2:terriLabels) {
 	    	String text2=label2.getText();
@@ -2700,7 +2719,7 @@ public class HomePage extends HelperFunctions {
 	    	Assert.assertTrue(true);
 	    }else {
 	    	Assert.assertTrue(false);
-	    }
+	    }*/
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on territory menu");
 	    terriMenu.click();
@@ -2729,7 +2748,7 @@ public class HomePage extends HelperFunctions {
 	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
 	    js2.executeScript("arguments[0].click();", usCheckbox);
 	    test.info("Clicked on us checkbox");
-	    HelperFunctions.staticWait(5);
+	   /* HelperFunctions.staticWait(5);
 	    boolean foundus=false;
 	    for(WebElement label3:terriLabels) {
 	    	System.out.println(label3.getText());
@@ -2743,8 +2762,18 @@ public class HomePage extends HelperFunctions {
 	    	Assert.assertTrue(true);
 	    }else {
 	    	Assert.assertTrue(false);
+	    }*/
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
 	    }
-	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(countryCount.getText().contains("Estados"));
+	    try {
+	    	Thread.sleep(4000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    js2.executeScript("arguments[0].click();", usCheckbox);
 	    try {
 	    	Thread.sleep(4000);
@@ -2752,7 +2781,7 @@ public class HomePage extends HelperFunctions {
 	    	e.printStackTrace();
 	    }
 	    js2.executeScript("arguments[0].click();", globalCheckbox);
-	    HelperFunctions.staticWait(5);
+	    /*HelperFunctions.staticWait(5);
 	    boolean foundGlobal3=false;
 	    for(WebElement label4:terriLabels) {
 	    	String text4=label4.getText();
@@ -2765,7 +2794,13 @@ public class HomePage extends HelperFunctions {
 	    	Assert.assertTrue(true);
 	    }else {
 	    	Assert.assertTrue(false);
+	    }*/
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
 	    }
+	    Assert.assertTrue(countryCount.getText().contains("Global"));
 	    HelperFunctions.staticWait(3);
 	    terriMenu.click();
 	    test.info("Clicked on territory menu");
@@ -2797,7 +2832,7 @@ public class HomePage extends HelperFunctions {
 	    JavascriptExecutor js3 = (JavascriptExecutor) Driver.getDriver();
 	    js3.executeScript("arguments[0].click();", mexicoCheckbox);
 	    test.info("Clicked on mexico checkbox");
-	    HelperFunctions.staticWait(5);
+	    /*HelperFunctions.staticWait(5);
 	    boolean foundMexico2=false;
 	    for(WebElement label5:terriLabels) {
 	    	System.out.println(label5.getText());
@@ -2811,8 +2846,18 @@ public class HomePage extends HelperFunctions {
 	    	Assert.assertTrue(true);
 	    }else {
 	    	Assert.assertTrue(false);
+	    }*/
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
 	    }
-	    HelperFunctions.staticWait(3);
+	    Assert.assertTrue(countryCount.getText().contains("Mexico"));
+	    try {
+	    	Thread.sleep(4000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    js2.executeScript("arguments[0].click();", mexicoCheckbox);
 	    try {
 	    	Thread.sleep(4000);
@@ -2820,7 +2865,7 @@ public class HomePage extends HelperFunctions {
 	    	e.printStackTrace();
 	    }
 	    js2.executeScript("arguments[0].click();", usGlobalCheckbox);
-	    HelperFunctions.staticWait(5);
+	    /*HelperFunctions.staticWait(5);
 	    boolean foundus2=false;
 	    for(WebElement label6:terriLabels) {
 	    	String text6=label6.getText();
@@ -2833,7 +2878,13 @@ public class HomePage extends HelperFunctions {
 	    	Assert.assertTrue(true);
 	    }else {
 	    	Assert.assertTrue(false);
+	    }*/
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
 	    }
+	    Assert.assertTrue(countryCount.getText().contains("US"));
 	    HelperFunctions.staticWait(3);
 	}
 }

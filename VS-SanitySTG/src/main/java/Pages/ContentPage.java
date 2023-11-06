@@ -925,7 +925,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    //HelperFunctions.waitForPageToLoad(15);
 	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
 	    try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
@@ -2431,7 +2431,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 60);
 	    //wait2.until(ExpectedConditions.visibilityOf(pageInfo));
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(7000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }

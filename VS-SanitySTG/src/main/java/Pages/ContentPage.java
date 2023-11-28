@@ -2046,7 +2046,9 @@ ReadXLSdata read1=new ReadXLSdata();
 	        }
 	    }*/
 	    test.info("Wait for page to load");
-	    //HelperFunctions.waitForPageToLoad(15);
+	    HelperFunctions.waitForPageToLoad(15);
+	    Driver.getDriver().navigate().refresh();
+        HelperFunctions.waitForPageToLoad(60);
 	   
 	    test.info("Wait for visibility of header");
 	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 30);
@@ -2066,7 +2068,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    test.info("Go to the homepage");
 	    Driver.getDriver().get(read1.getCellData("VALUE", 11));
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(30);
+	    HelperFunctions.waitForPageToLoad(60);
 	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for visibility of header");
 	    WebDriverWait wait6 = new WebDriverWait(Driver.getDriver(), 30);
@@ -2085,7 +2087,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    test.info("Go to the topic landing page");
 	    Driver.getDriver().get(read1.getCellData("VALUE", 12));
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(30);
+	    HelperFunctions.waitForPageToLoad(60);
 	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for visibility of header");
 	    WebDriverWait wait8 = new WebDriverWait(Driver.getDriver(), 30);
@@ -2287,7 +2289,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
 	    try {
-	    	Thread.sleep(5000);
+	    	Thread.sleep(10000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }
@@ -2351,7 +2353,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    previewButton.click();
 	    Driver.getDriver().switchTo().frame(0);
 	    Assert.assertTrue(enablersItems.get(0).getText().contains(value2));
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.staticWait(5);
 	}
 	public void setpwcGXEdit(ExtentTest test) throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "QA");
@@ -2362,7 +2364,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
 	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(10000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }
@@ -2405,7 +2407,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    HelperFunctions.staticWait(2);
 	    done.click();
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(7000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }
@@ -2419,7 +2421,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    Driver.getDriver().switchTo().frame(0);
 	    HelperFunctions.staticWait(2);
 	    Assert.assertTrue(contact.getText().contains(value1));
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.staticWait(7);
 	}
 	public void setExternalPageMandatoryFields(ExtentTest test) throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "QA");
@@ -2472,7 +2474,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    test.info("Clicked on save and close");
 	    HelperFunctions.waitForPageToLoad(90);
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(10000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }

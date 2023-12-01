@@ -2204,8 +2204,9 @@ public class HomePage extends HelperFunctions {
 		read1.setExcelFile("./testdata.xlsx", "STG");
 	 
 	    test.info("Wait for page to load");
-	
-	      
+	    HelperFunctions.staticWait(3); 
+	    Driver.getDriver().navigate().refresh();
+	    HelperFunctions.waitForPageToLoad(60);
 	    test.info("Wait for terri menu's visibility");
 	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 60);
 	    wait3.until(ExpectedConditions.visibilityOf(terriMenu));

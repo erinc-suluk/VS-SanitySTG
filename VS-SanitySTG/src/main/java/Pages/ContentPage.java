@@ -978,9 +978,9 @@ ReadXLSdata read1=new ReadXLSdata();
 	    WebDriverWait wait7 = new WebDriverWait(Driver.getDriver(), 10);
 	    wait7.until(ExpectedConditions.visibilityOf(publishMessage));*/
 	    //HelperFunctions.staticWait(3);
-	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(5000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }
@@ -1014,7 +1014,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
 	    WebDriverWait wait10 = new WebDriverWait(Driver.getDriver(), 30);
-	    wait10.until(ExpectedConditions.elementToBeClickable(configure));
+	    wait10.until(ExpectedConditions.visibilityOf(configure));
 	    configure.click();
 	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on title field and enter the first title");
@@ -1029,7 +1029,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	    test.info("Clicked on done button");
 	    done.click();
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(10000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }
@@ -1045,7 +1045,7 @@ ReadXLSdata read1=new ReadXLSdata();
 	   // wait10.until(ExpectedConditions.visibilityOf(publishMessage));
 	    //HelperFunctions.staticWait(3);
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(5000);
 	    }catch(InterruptedException e) {
 	    	e.printStackTrace();
 	    }

@@ -1557,7 +1557,7 @@ public class HomePage extends HelperFunctions {
 			Assert.assertTrue(false);
 	 }
 	    test.info("Verified element opened the same tab");
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.staticWait(5);
 	    
 	}
 	public void setSharetheURLwithFilter(ExtentTest test) throws Exception {

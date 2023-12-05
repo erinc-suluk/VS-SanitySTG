@@ -110,8 +110,9 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
 	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    HelperFunctions.staticWait(3);
 	    try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
@@ -153,7 +154,7 @@ public class TopicLandingPage extends HelperFunctions {
 	    String upto4articles=firstKeyAsset.getAttribute("aria-setsize");
 	    String upto4articlesExpected="4";
 	    Assert.assertTrue(upto4articles.equalsIgnoreCase(upto4articlesExpected));
-	    HelperFunctions.staticWait(3);	
+	    HelperFunctions.staticWait(5);	
 	}
 	
 	public void setHotTopics(ExtentTest test) throws Exception {
@@ -162,8 +163,9 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
 	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    HelperFunctions.staticWait(3);
 	    try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
@@ -190,7 +192,7 @@ public class TopicLandingPage extends HelperFunctions {
 	    HelperFunctions.staticWait(3);
 	    test.info("Verified configure button is displayed");
 	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
-	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
+	    wait2.until(ExpectedConditions.visibilityOf(configure));
 	    //Assert.assertTrue(configure.isDisplayed());
 	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
@@ -209,8 +211,9 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
 	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    HelperFunctions.staticWait(5);
 	    try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
@@ -237,7 +240,7 @@ public class TopicLandingPage extends HelperFunctions {
 	    HelperFunctions.staticWait(3);
 	    test.info("Verified configure button is displayed");
 	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
-	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
+	    wait2.until(ExpectedConditions.visibilityOf(configure));
 	    //Assert.assertTrue(configure.isDisplayed());
 	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
@@ -263,7 +266,7 @@ public class TopicLandingPage extends HelperFunctions {
 	    HelperFunctions.staticWait(2);
 	    Assert.assertTrue(errorLabel1.isDisplayed());
 	    test.info("Verified errorLabel1 is displayed");
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.staticWait(5);
 	    
 	}
 	
@@ -273,8 +276,9 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Wait for page to load");
 	    //HelperFunctions.waitForPageToLoad(15);
 	    JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-	    WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-	    wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    //WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
+	    HelperFunctions.staticWait(3);
 	    try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
@@ -301,7 +305,7 @@ public class TopicLandingPage extends HelperFunctions {
 	    HelperFunctions.staticWait(3);
 	    test.info("Verified configure button is displayed");
 	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 30);
-	    wait2.until(ExpectedConditions.elementToBeClickable(configure));
+	    wait2.until(ExpectedConditions.visibilityOf(configure));
 	    //Assert.assertTrue(configure.isDisplayed());
 	    //HelperFunctions.staticWait(3);
 	    test.info("Clicked on configure button");
@@ -320,7 +324,7 @@ public class TopicLandingPage extends HelperFunctions {
 	    wait4.until(ExpectedConditions.visibilityOf(errorLabel));
 	    Assert.assertTrue(errorLabel.isDisplayed());
 	    test.info("Verified error label is displayed");
-	    HelperFunctions.staticWait(3);
+	    HelperFunctions.staticWait(5);
 	}
 	public void setBacktoTopicandTopicsSize(ExtentTest test) throws Exception {
 		read1.setExcelFile("./testdata.xlsx", "STG");

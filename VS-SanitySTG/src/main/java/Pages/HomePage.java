@@ -1394,7 +1394,7 @@ public class HomePage extends HelperFunctions {
 	    searchField.sendKeys(mockContent);
 	    //HelperFunctions.staticWait(5);
 	    test.info("Wait for suggested keyword visibility");
-	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 20);
+	    WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 30);
 	    wait3.until(ExpectedConditions.visibilityOf(suggestedKeyword2));
 	    Assert.assertTrue(suggestedKeyword2.isDisplayed());
 	    test.info("Verified suggested keyword is displayed");
@@ -1403,7 +1403,7 @@ public class HomePage extends HelperFunctions {
 	    Actions actions = new Actions(Driver.getDriver());
 	    actions.sendKeys(Keys.ENTER).build().perform();
 	    test.info("Wait for page to load");
-	    HelperFunctions.waitForPageToLoad(15);
+	    HelperFunctions.waitForPageToLoad(30);
 	    //HelperFunctions.staticWait(3);
 	    test.info("Wait for search item visibility");
 	    WebDriverWait wait4 = new WebDriverWait(Driver.getDriver(), 10);

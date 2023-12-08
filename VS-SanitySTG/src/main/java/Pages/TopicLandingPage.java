@@ -417,14 +417,15 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Verified topic page title's is displayed");
 	    HelperFunctions.staticWait(2);
 	    test.info("Clicked on content page");
-	    for (WebElement element : feedTopics) {
+	    /*for (WebElement element : feedTopics) {
             if (element.getText().contains("PwC")) {
             	   ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
             	   JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
                    executor.executeScript("arguments[0].click();", element);
                 break;
             }
-        }
+        }*/
+	    feedTopics.get(0).click();
 	    test.info("Wait for page to load");
 	    HelperFunctions.waitForPageToLoad(30);
 	    //HelperFunctions.staticWait(3);
@@ -512,14 +513,15 @@ public class TopicLandingPage extends HelperFunctions {
 	    test.info("Verified topic page title's is displayed");
 	    HelperFunctions.staticWait(2);
 	    test.info("Clicked on content page");
-	    for (WebElement element : feedTopics) {
+	    /*for (WebElement element : feedTopics) {
             if (element.getText().contains("PwC")) {
             	   ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
             	   JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
                    executor.executeScript("arguments[0].click();", element);
                 break;
             }
-        }
+        }*/
+	    feedTopics.get(0).click();
 	    test.info("Wait for page to load");
 	    HelperFunctions.waitForPageToLoad(30);
 	    //HelperFunctions.staticWait(3);

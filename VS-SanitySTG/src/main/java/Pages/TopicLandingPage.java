@@ -114,11 +114,12 @@ public class TopicLandingPage extends HelperFunctions {
 	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
 	    HelperFunctions.staticWait(3);
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(7000);
 	    }catch(InterruptedException e) {
+	    	js.executeScript("arguments[0].click();", pageInfo);
 	    	e.printStackTrace();
 	    }
-	    js.executeScript("arguments[0].click();", pageInfo);
+	    
 	    try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {
@@ -167,11 +168,12 @@ public class TopicLandingPage extends HelperFunctions {
 	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
 	    HelperFunctions.staticWait(3);
 	    try {
-	    	Thread.sleep(3000);
+	    	Thread.sleep(7000);
 	    }catch(InterruptedException e) {
+	    	 js.executeScript("arguments[0].click();", pageInfo);
 	    	e.printStackTrace();
 	    }
-	    js.executeScript("arguments[0].click();", pageInfo);
+	   
 	    try {
 	    	Thread.sleep(3000);
 	    }catch(InterruptedException e) {

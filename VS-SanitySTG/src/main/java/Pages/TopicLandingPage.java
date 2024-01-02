@@ -217,7 +217,7 @@ public class TopicLandingPage extends HelperFunctions {
 	    //wait.until(ExpectedConditions.visibilityOf(pageInfo));
 	    HelperFunctions.staticWait(5);
 	    try {
-	    	Thread.sleep(8000);
+	    	Thread.sleep(7000);
 	    }catch(InterruptedException e) {
 	        js.executeScript("arguments[0].click();", pageInfo);
 	    	e.printStackTrace();

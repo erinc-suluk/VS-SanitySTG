@@ -1509,7 +1509,7 @@ public class SanityTestCases extends HelperFunctions {
 		        Driver.getDriver().get(read1.getCellData("VALUE", 19));
 		        lpo.setLogin4();
 		        cp.setExternalPageMandatoryFields(test);
-		        test.pass("WEB_75 passed");  
+		        test.pass("WEB_76 passed");  
 		    } catch (Exception e) {
 		        String screenshotPath = takeScreenshot(testName);
 		        test.fail("Test failed: " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -1527,7 +1527,7 @@ public class SanityTestCases extends HelperFunctions {
 		        Driver.getDriver().get(read1.getCellData("VALUE", 11));
 		        lpo.setLogin4();
 		        hp.setSelectingTerritoriesSearchResult(test);
-		        test.pass("WEB_69 passed");  
+		        test.pass("WEB_77 passed");  
 		    } catch (Exception e) {
 		        String screenshotPath = takeScreenshot(testName);
 		        test.fail("Test failed: " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -1546,7 +1546,7 @@ public class SanityTestCases extends HelperFunctions {
 		        Driver.getDriver().get(read1.getCellData("VALUE", 11));
 		        lpo.setLogin4();
 		        hp.setExternalPageNewTab(test);
-		        test.pass("WEB_69 passed");  
+		        test.pass("WEB_78 passed");  
 		    } catch (Exception e) {
 		        String screenshotPath = takeScreenshot(testName);
 		        test.fail("Test failed: " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
@@ -1564,7 +1564,7 @@ public class SanityTestCases extends HelperFunctions {
 		        Driver.getDriver().get(read1.getCellData("VALUE", 11));
 		        lpo.setLogin4();
 		        hp.setLogoutOption(test);
-		        test.pass("WEB_69 passed");  
+		        test.pass("WEB_79 passed");  
 		    } catch (Exception e) {
 		        String screenshotPath = takeScreenshot(testName);
 		        test.fail("Test failed: " + e.getMessage(), MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());

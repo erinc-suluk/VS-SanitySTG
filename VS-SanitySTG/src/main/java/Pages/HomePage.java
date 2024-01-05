@@ -609,21 +609,27 @@ public class HomePage extends HelperFunctions {
 	    Assert.assertTrue(dealsTag.isDisplayed());
 	    HelperFunctions.staticWait(2);
 	    logo.click();*/
-		HelperFunctions.staticWait(3);
-		 Driver.getDriver().navigate().refresh();
-		    HelperFunctions.waitForPageToLoad(90);
+		//HelperFunctions.staticWait(3);
+		 //Driver.getDriver().navigate().refresh();
+		   // HelperFunctions.waitForPageToLoad(90);
 	    test.info("Wait for page to load");
 	    test.info("Wait for logo visibility");
-	    WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 20);
-	    wait2.until(ExpectedConditions.visibilityOf(logo));
-	    HelperFunctions.staticWait(3);
+	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	    //WebDriverWait wait2 = new WebDriverWait(Driver.getDriver(), 20);
+	    //wait2.until(ExpectedConditions.visibilityOf(logo));
+	    try {
+	    	Thread.sleep(5000);
+	    }catch(InterruptedException e) {
+	    	e.printStackTrace();
+	    }
 	    test.info("Clicked on select topic");
-        selectTopic.click();
+	    js2.executeScript("arguments[0].click();", selectTopic);
+        //selectTopic.click();
         //HelperFunctions.staticWait(2);
         test.info("Wait for deals checkbox visibility and clicked on it");
         WebDriverWait wait3 = new WebDriverWait(Driver.getDriver(), 20);
 	    wait3.until(ExpectedConditions.visibilityOf(dealsCheckbox));
-	    JavascriptExecutor js2 = (JavascriptExecutor) Driver.getDriver();
+	   
 	    js2.executeScript("arguments[0].click();", dealsCheckbox);
 	    HelperFunctions.staticWait(3);
 	    test.info("Clicked on select topic");
